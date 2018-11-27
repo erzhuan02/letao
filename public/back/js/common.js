@@ -1,3 +1,5 @@
+// NProgress.start()
+// NProgress.set(0.4)
 // 进度条功能
 // 用jq中ajax全局事件
 $(document).ajaxStart(function () {
@@ -13,9 +15,9 @@ $(document).ajaxStop(function () {
 })
 
 // 公共功能
-$(function (){
-    // 1.侧边栏二级菜单切换
-})
+// $(function (){
+//     // 1.侧边栏二级菜单切换
+// })
 // $(function () {
 
 //     // 公共的功能:

@@ -79,7 +79,7 @@ $(function () {
             data: $('#form').serialize(),
             dataType: 'json',
             success: function (info) {
-                console.log(info);
+                // console.log(info);
                 if (info.error === 1000) {
                     $('#form').data("bootstrapValidator").updateStatus("username", "INVALID", "callback")
                     // alert("用户名不存在")
