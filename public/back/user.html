@@ -24,7 +24,7 @@
         </div>
         <div class="nav mt_30">
             <ul>
-                <li><a href="user.html"><i class="glyphicon glyphicon-user"></i>用户管理</a></li>
+                <li><a href="user.html" class="active"><i class="glyphicon glyphicon-user"></i>用户管理</a></li>
                 <li><a href="javascript:;" class="category"><i class="glyphicon glyphicon-list"></i>分类管理</a>
                     <!-- 用于切换展示的二级列表 -->
                     <div class="child" style="display:none">
@@ -45,17 +45,43 @@
             <!-- 面包屑导航 -->
             <ol class="breadcrumb mt_20">
                 <li><a href="index.html">管理系统</a></li>
-                <li class="active">首页</li>
+                <li class="active">用户管理</li>
             </ol>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>用户名</th>
+                        <th>手机号</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>itcast</td>
+                        <td>15757771111</td>
+                        <td>正常</td>
+                        <td><button class="btn btn-danger">禁用</button></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>itcast</td>
+                        <td>15757771111</td>
+                        <td>正常</td>
+                        <td><button class="btn btn-danger">禁用</button></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>itcast</td>
+                        <td>15757771111</td>
+                        <td>正常</td>
+                        <td><button class="btn btn-danger">禁用</button></td>
+                    </tr>
+                </tbody>
 
-            <!-- 准备两个具备宽高的容器，放条状图和饼状图 -->
-            <div class="content">
-                <div class="echarts_left pull-left"></div>
-                <div class="echarts_right pull-right"></div>
-            </div>
-            <!-- Button trigger modal -->
-            <!-- <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">切换模态框
-            </button> -->
+            </table>
 
         </div>
     </div>
@@ -93,8 +119,8 @@
     <script src="./js/common.js"></script>
     <!-- 引入登录拦截 -->
     <script src="./js/isLogin.js"></script>
-    <!-- 引入首页的js等-->
-    <script src="./js/index.js"></script>
+    <!-- 引入自己的js-->
+    <!-- <script src="./js/user.js"></script> -->
 </body>
 
 </html>
