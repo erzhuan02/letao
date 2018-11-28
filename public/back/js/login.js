@@ -9,7 +9,6 @@ $(function () {
      *        (2) 密码不能为空, 长度为6-12位
      * */
     $('#form').bootstrapValidator({
-
         // 配置校验图标
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok', // 校验成功
@@ -36,7 +35,6 @@ $(function () {
                     callback: {
                         message: "用户名不存在"
                     }
-
                 }
             },
 
@@ -57,10 +55,7 @@ $(function () {
                 }
             }
         }
-
-
     });
-
 
     /*
      * 2. 校验成功后, 会触发一个事件, 表单校验成功事件
@@ -68,10 +63,8 @@ $(function () {
      *    我们需要注册表单校验成功事件, 在成功事件中, 阻止默认的提交, 通过 ajax 提交
      * */
     $('#form').on('success.form.bv', function (e) {
-
         // 阻止默认的提交
         e.preventDefault()
-
         // console.log( "默认的表单提交被阻止了, 通过ajax来提交" )
         $.ajax({
             type: "post",
@@ -98,8 +91,6 @@ $(function () {
         })
 
     });
-
-
     /*
      * 3. 重置功能, 本身重置按钮, 就可以重置内容, 需要额外的重置状态
      * */
