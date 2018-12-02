@@ -28,7 +28,7 @@
                 <li><a href="javascript:;" class="category"><i class="glyphicon glyphicon-list"></i>分类管理</a>
                     <!-- 用于切换展示的二级列表 -->
                     <div class="child" style="display:block">
-                        <a href="first.html"  class="active">一级分类</a>
+                        <a href="first.html" class="active">一级分类</a>
                         <a href="second.html">二级分类</a>
                     </div>
                 </li>
@@ -48,6 +48,25 @@
                 <li class="active">分类管理</li>
                 <li class="active">一级分类</li>
             </ol>
+            <!-- 添加分类按钮 -->
+            <button class="btn btn-default add">添加分类</button>
+            <!-- 页面表格 -->
+            <table class="table table-bordered table-hover mt_20">
+                <thead>
+                    <tr>
+                        <th width="20%">序号</th>
+                        <th>一级分类</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 挖个坑 -->
+                </tbody>
+            </table>
+
+            <!-- 准备分页容器 3.x 版本要求是 ul -->
+            <div class="text-right">
+                <ul id="paginator"></ul>
+            </div>
         </div>
     </div>
 
@@ -60,7 +79,7 @@
                     <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
                 </div>
                 <div class="modal-body">
-                    <i class="glyphicon glyphicon-info-sign"></i> 您确定要退出后台管理系统吗？
+                    <p><i class="glyphicon glyphicon-info-sign"></i> 您确定要退出后台管理系统吗？</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -70,22 +89,66 @@
         </div>
     </div>
 
+
+    <!-- 添加模态框 -->
+    <div class="modal fade" id="firstModal" tabindex="-1">
+        <!-- 模态框 -->
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <!-- <form id="form"> -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title">添加分类</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="form">
+                        <!-- bootstrap有格式规范, 每一行需要外层包一个 form-group -->
+                        <div class="form-group">
+                            <input type="text" name="categoryName" class="form-control" placeholder="请输入一级分类">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <!-- html5 新增 form 属性, 可以让表单外的按钮, 与表单关联起来(就相当于是写在了表单里面) 也可以外面直接包裹form-->
+                    <button type="submit" class="btn btn-primary" form="form">添加</button>
+                </div>
+                <!-- </form> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 准备模板 -->
+    <script type="text/html" id="firstTmp">
+        {{each rows v i}}
+        <tr>
+            <td>{{i+1+(page-1)*size}}</td>
+            <td>{{v.categoryName}}</td>
+        </tr>
+        {{/each}}
+        
+    </script>
+
     <!-- 引入jquery -->
     <script src="./lib/jquery/jquery.min.js"></script>
     <!-- 引入bootstrap -->
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
+    <!-- 引入模板引擎 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
     <!-- 引入表单验证 -->
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
     <!-- 引入进度条 -->
     <script src="./lib/nprogress/nprogress.js"></script>
     <!-- 引入echarts -->
     <script src="./lib/echarts/echarts.min.js"></script>
+    <!-- 引入分页插件 -->
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
     <!-- 引入公共的功能 -->
     <script src="./js/common.js"></script>
     <!-- 引入登录拦截 -->
     <script src="./js/isLogin.js"></script>
     <!-- 引入自己的js-->
-    <!-- <script src="./js/first.js"></script> -->
+    <script src="./js/first.js"></script>
 </body>
 
 </html>
